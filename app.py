@@ -163,11 +163,5 @@ def fir1():
 def fir2():
     return render_template('fetch.js')
 
-
-
-
-
-
-
 if __name__ == "__main__":
     app.run(debug=True)
