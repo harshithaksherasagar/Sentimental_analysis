@@ -1,6 +1,11 @@
 from transformers import pipeline
+classifier = pipeline('sentiment-analysis', device=-1)  # force CPU
+
 from flask import Flask, request, redirect, url_for, flash, render_template,jsonify,json
-import matplotlib.pyplot as plt
+
+import matplotlib
+matplotlib.use('Agg')  # non-GUI backend for Flask
+
 import pandas as pd
 import io
 import base64
@@ -8,6 +13,9 @@ import urllib.request
 import ast
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 #import seaborn as sns
+
+
+
 
 app = Flask(__name__)
 
