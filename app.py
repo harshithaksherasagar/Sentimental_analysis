@@ -143,33 +143,50 @@ def showgraph():
 
 
 
-@app.route('/form.html')
+@app.route('/form.html', methods=['GET', 'POST'])
 def my_form():
     return render_template('form.html')
-@app.route('/')
+
+
+@app.route('/', methods=['GET', 'POST'])
 def reg():
     return render_template('sreg.html')
-@app.route('/slog.html')
+
+
+@app.route('/slog.html', methods=['GET', 'POST'])
 def log():
     return render_template('slog.html')
-@app.route('/sreg.html')
+
+
+@app.route('/sreg.html', methods=['GET', 'POST'])
 def reg1():
     return render_template('sreg.html')
-@app.route('/admin.html')
+
+
+@app.route('/admin.html', methods=['GET', 'POST'])
 def log1():
     return render_template('admin.html')
-@app.route('/admindata.html')
+
+
+@app.route('/admindata.html', methods=['GET', 'POST'])
 def log2():
     return render_template('admindata.html')
+
+
 @app.route('/firebase.js')
 def fir():
     return render_template('firebase.js')
+
+
 @app.route('/data.js')
 def fir1():
     return render_template('data.js')
+
+
 @app.route('/fetch.js')
 def fir2():
     return render_template('fetch.js')
 
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=7860)
