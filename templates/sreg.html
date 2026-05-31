@@ -1,139 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Sample Registration Page</title>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration</title>
 
-    <style>
-        body {
-            background-color: rgb(230, 236, 240);
-        }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-        form {
-            padding: 10px;
-            line-height: 10px
-        }
+<style>
 
-        main {
-            width: 200px;
-            height: 200px;
-            padding: 10px;
-            background: beige;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
 
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#667eea,#764ba2);
+    padding:20px;
+}
 
+.container{
+    width:100%;
+    max-width:650px;
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 15px 35px rgba(0,0,0,0.2);
+}
 
-        p {
-            font-family: Open Sans;
-            color: black;
-            border-bottom: 1.50px solid black;
-            font-family: cursive;
-            color: black;
-        }
+.title{
+    text-align:center;
+    font-size:32px;
+    font-weight:600;
+    color:#333;
+    margin-bottom:30px;
+}
 
-    </style>
+.row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.field{
+    margin-bottom:20px;
+}
+
+.field label{
+    display:block;
+    margin-bottom:8px;
+    color:#555;
+    font-weight:500;
+}
+
+.field input{
+    width:100%;
+    padding:12px 15px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-size:15px;
+}
+
+.field input:focus{
+    outline:none;
+    border-color:#667eea;
+}
+
+.gender{
+    margin-bottom:20px;
+}
+
+.gender label{
+    margin-right:15px;
+}
+
+.btn{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    background:linear-gradient(135deg,#667eea,#764ba2);
+    color:white;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+}
+
+.login-link{
+    text-align:center;
+    margin-top:20px;
+}
+
+.login-link a{
+    text-decoration:none;
+    color:#667eea;
+}
+
+.login-link a:hover{
+    color:#764ba2;
+}
+
+@media(max-width:600px){
+
+    .container{
+        padding:25px;
+    }
+
+    .row{
+        grid-template-columns:1fr;
+    }
+
+    .title{
+        font-size:26px;
+    }
+}
+
+</style>
 </head>
+
 <body>
-    <p style="color:rgb(69, 141, 10);
-        font-size:49.9px;
-        font-weight:bold;
-        text-align:center;"> Registration form</p>
 
+<div class="container">
 
-       <form  action="slog.html" method="post"  onsubmit="submitform()"  id="analysis">
-          <table align="center">
+    <div class="title">Create Account</div>
 
-          <tr>
-              <td>
-                  <label>First Name</label>
-              </td>
-              <td><input type="text" id="fname" name="fname" />
-              </td>
-          </tr>
-          <tr>
-              <td>
-                  <label>Last Name</label>
-              </td>
-              <td><input type="text" id="lname" name="lname" />
-              </td>
-          </tr>
-          <tr>
-              <td><label>User Name</label>
-              </td>
-              <td><input type="text" id="uname" name="uname" />
-              </td>
-          </tr>
+    <form action="slog.html" method="post" onsubmit="submitform()">
 
+        <div class="row">
 
+            <div class="field">
+                <label>First Name</label>
+                <input type="text" id="fname" required>
+            </div>
 
-            <tr>
+            <div class="field">
+                <label>Last Name</label>
+                <input type="text" id="lname" required>
+            </div>
 
-                <td>
-                    <label >Gender</label>
-                </td>
-                <td>
+        </div>
 
-                    <input type="radio" name="male"/>
-                    <label >Male</label>
+        <div class="field">
+            <label>Username</label>
+            <input type="text" id="uname" required>
+        </div>
 
-                    <input type="radio" name="female"/>
-                    <label >Female </label>
+        <div class="gender">
 
-                    <input type="radio" name="other"/>
-                    <label >Other</label>
-                </td>
-            </tr>
+            <label>Gender</label><br><br>
 
-            <tr>
-                <td>
-                  <label>Birthday</label>
-                </td>
-                  <td><input type="date" id="bday" name="bday">
-                  </td>
-            </tr>
-            <tr>
-                <td><label>Email</label>
-                </td>
-                <td><input type="email" id="email" name="email" />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label>contact No.</label>
-                </td>
-                <td><input type="text" id="con-ph" name="telnum"/>
-                </td>
-            </tr>
+            <input type="radio" name="gender" value="Male"> Male
 
-            <tr>
-                <td><label>
-                        Password
-                    </label>
-                </td>
-                <td><input type="text" id="con-pwd" name="pword" />
-                </td>
-            </tr>
-            <tr>
-                <td><label>
-                        Confirm  password
-                    </label>
-                </td>
-                <td> <input type="text" id="con-cnfpwd" name="pword2" />
-                </td>
-            </tr>
-            <tr>
-                <td><button type="submit" >submit</button></td>
-                <td><a href="slog.html">Already registered?</a></td>
-            </tr>
+            <input type="radio" name="gender" value="Female"> Female
 
+            <input type="radio" name="gender" value="Other"> Other
 
-      </table>
+        </div>
 
-</form>
+        <div class="field">
+            <label>Date of Birth</label>
+            <input type="date" id="bday" required>
+        </div>
 
+        <div class="row">
 
+            <div class="field">
+                <label>Email</label>
+                <input type="email" id="email" required>
+            </div>
+
+            <div class="field">
+                <label>Contact Number</label>
+                <input type="text" id="con-ph" required>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="field">
+                <label>Password</label>
+                <input type="password" id="con-pwd" required>
+            </div>
+
+            <div class="field">
+                <label>Confirm Password</label>
+                <input type="password" id="con-cnfpwd" required>
+            </div>
+
+        </div>
+
+        <button type="submit" class="btn">
+            Create Account
+        </button>
+
+        <div class="login-link">
+            <a href="slog.html">Already have an account? Login</a>
+        </div>
+
+    </form>
+
+</div>
 
 <script src="https://www.gstatic.com/firebasejs/5.0.0/firebase.js"></script>
 <script src="firebase.js"></script>
-</body>
 
+</body>
 </html>

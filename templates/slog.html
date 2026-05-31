@@ -1,113 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Login Page</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: rgb(230, 236, 240);
-            font-family: sans-serif;
-        }
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
 
-        .loginbox {
-            width: 350px;
-            height: 420px;
-            background: white;
-            color: black;
-            top: 50%;
-            left: 50%;
-            position: absolute;
-            transform: translate(-50%, -50%);
-            box-sizing: border-box;
-            padding: 70px 30px
-        }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-        .avatar {
-            width: 150px;
-            height: 150px;
-            border-radius: 25%;
-            position: absolute;
-            top: -75px;
-            left: 29%
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
 
-        h1 {
-            margin: 0;
-            padding: 0 0 20 px;
-            text-align: center;
-            font-size: 22px;
-        }
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#667eea,#764ba2);
+    padding:20px;
+}
 
-        .loginbox p {
-            margin: 0;
-            padding: 0;
-            font-weight: bold;
-        }
+.loginbox{
+    width:100%;
+    max-width:400px;
+    background:#fff;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 15px 35px rgba(0,0,0,0.2);
+}
 
-        .loginbox input {
-            width: 100%;
-            margin-bottom: 20px;
-        }
+h1{
+    text-align:center;
+    color:#333;
+    margin-bottom:30px;
+}
 
-        .loginbox input[type="text"],
-        input[type="password"] {
-            border: none;
-            border-bottom: 1px solid white;
-            background: transparent;
-            outline: none;
-            height: 40px;
-            color: black;
-            font-size: 8px;
-        }
+.loginbox p{
+    margin-bottom:8px;
+    color:#555;
+    font-weight:500;
+}
 
-        .loginbox input[type="submit"] {
-            border: none;
-            outline: none;
-            height: 40px;
-            background: red;
-            color: white;
-            font-size: 18px;
-            border-radius: 20px;
-        }
+.loginbox input[type="email"],
+.loginbox input[type="password"]{
+    width:100%;
+    padding:12px 15px;
+    margin-bottom:20px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-size:15px;
+}
 
-        .loginbox input[type="submit"]:hover {
-            cursor: pointer;
-            background: #ffc107;
-            color: #000;
-        }
+.loginbox input:focus{
+    outline:none;
+    border-color:#667eea;
+}
 
-        .loginbox a {
-            text-decoration: none;
-            font-size: 12px;
-            line-height: 20px;
-            color: darkgrey;
-        }
+.loginbox input[type="button"]{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    background:linear-gradient(135deg,#667eea,#764ba2);
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
 
-        .loginbox a:hover {
-            color: #ffc107;
-        }
-    </style>
+.loginbox input[type="button"]:hover{
+    transform:translateY(-2px);
+}
 
+.links{
+    text-align:center;
+    margin-top:20px;
+}
+
+.links a{
+    display:block;
+    text-decoration:none;
+    color:#667eea;
+    margin-top:10px;
+}
+
+.links a:hover{
+    color:#764ba2;
+}
+
+@media(max-width:480px){
+    .loginbox{
+        padding:25px;
+    }
+}
+</style>
 </head>
-    <body>
-        <div class="loginbox">
 
-            <h1>Login</h1>
-            <form>
-                <p>Email</p>
-                <input type="text" name= "name" id="email" placeholder="Enter email" required>
-                <p>Password</p>
-                <input type="Password" id="pwd" placeholder="Enter Password" required>
-                <input type="button" value="Login" onclick="login()">
-                <a href="sreg.html">Don't have account?</a>
-                <a href="admin.html">Login as admin?</a>
+<body>
 
-            </form>
+<div class="loginbox">
+
+    <h1>Welcome Back</h1>
+
+    <form>
+
+        <p>Email</p>
+        <input type="email" id="email" placeholder="Enter your email" required>
+
+        <p>Password</p>
+        <input type="password" id="pwd" placeholder="Enter your password" required>
+
+        <input type="button" value="Login" onclick="login()">
+
+        <div class="links">
+            <a href="sreg.html">Create New Account</a>
+            <a href="admin.html">Login as Admin</a>
         </div>
-    <script src="https://www.gstatic.com/firebasejs/5.0.0/firebase.js"></script>
 
-    </body>
+    </form>
+
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/5.0.0/firebase.js"></script>
 <script src="firebase.js"></script>
 
+</body>
 </html>
